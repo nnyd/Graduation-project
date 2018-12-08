@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cgn</groupId>
+  <artifactId>EmploymentForum</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+  </parent>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<java.version>1.8</java.version>
+  </properties>
+  
+  <dependencies>
+	  <!-- https://mvnrepository.com/artifact/junit/junit -->
+	  <dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>4.12</version>
+		  <scope>test</scope>
+	  </dependency>
+
+	  <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.31</version>
+	</dependency>
+    
+    <!-- web支持: 1、web mvc; 2、restful; 3、jackjson支持; 4、aop ........ -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	<!-- servlet 依赖. -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<scope>provided</scope>
+	</dependency>
+ 
+ 		<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.4</version>
+	</dependency>
+
+	<!-- tomcat 的支持.-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-jasper</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	
+    <!-- mysql 数据库驱动. -->
+    <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+	</dependency>
+	
+	<!-- 	
+		spring-boot mybatis依赖：
+		请不要使用1.0.0版本，因为还不支持拦截器插件，
+    	1.1.1 是博主写帖子时候的版本，大家使用最新版本即可
+     -->
+	<dependency>
+	    <groupId>org.mybatis.spring.boot</groupId>
+	    <artifactId>mybatis-spring-boot-starter</artifactId>
+	    <version>1.3.1</version>
+	</dependency>
+	
+	<!-- 
+    	MyBatis提供了拦截器接口，我们可以实现自己的拦截器，
+    	将其作为一个plugin装入到SqlSessionFactory中。 
+		Github上有位开发者写了一个分页插件，我觉得使用起来还可以，挺方便的。 
+		Github项目地址： https://github.com/pagehelper/Mybatis-PageHelper
+     -->	
+	<!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>4.1.0</version>
+	</dependency>
+	
+	<dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-devtools</artifactId>
+          <optional>true</optional>
+         <scope>true</scope>
+	</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>3.17</version>
+	</dependency>
+    
+  </dependencies>
+  <build>
+  
+  	<plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+            </configuration>
+        </plugin>
+    </plugins>
+  	<finalName>EmploymentForum</finalName>
+  </build>
+</project>
